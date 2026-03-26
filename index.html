@@ -683,8 +683,10 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
   }
 })();
 
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')});},{threshold:.07});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')});},{threshold:.05});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Fallback: show all after 1.5s in case observer fails
+setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));},1500);
 
 window.addEventListener('scroll',()=>{
   document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
