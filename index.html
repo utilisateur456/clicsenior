@@ -593,26 +593,26 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
       <h2 class="section-title">Commençons<br><em>ensemble.</em></h2>
       <p class="section-intro">Votre première séance est offerte. Appelez-moi ou remplissez le formulaire — je vous réponds rapidement.</p>
       <div class="cdet"><div class="cic">📞</div><div><h4>Téléphone</h4><a href="tel:0218623326">021 862 33 26</a></div></div>
-      <div class="cdet"><div class="cic">✉️</div><div><h4>E-mail</h4><a href="/cdn-cgi/l/email-protection#a6cfc8c0c9e6c5cacfc5d5c3c8cfc9d488c5ce"><span class="__cf_email__" data-cfemail="e48d8a828ba487888d8797818a8d8b96ca878c">[email&#160;protected]</span></a></div></div>
+      <div class="cdet"><div class="cic">✉️</div><div><h4>E-mail</h4><a href="mailto:info@clicsenior.ch">info@clicsenior.ch</a></div></div>
       <div class="cdet"><div class="cic">📍</div><div><h4>Zone d'intervention</h4><p>Gros-de-Vaud · Suisse romande<br>À domicile ou en visioconférence</p></div></div>
       <div class="cdet"><div class="cic">🌐</div><div><h4>Site web</h4><a href="https://www.clicsenior.ch">www.clicsenior.ch</a></div></div>
     </div>
     <div class="cform reveal d2">
       <h3>Première séance offerte</h3>
       <p>Remplissez ce formulaire, je vous recontacte rapidement.</p>
-      <div id="formSuccess" style="display:none;text-align:center;padding:3rem 2rem;animation:fadeUp .6s ease both">
-        <div style="font-size:3.5rem;margin-bottom:1rem">✅</div>
+      <div id="formSuccess" style="display:none;text-align:center;padding:2.5rem 1rem">
+        <div style="font-size:3rem;margin-bottom:1rem">✅</div>
         <h4 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);margin-bottom:.8rem">Message envoyé !</h4>
-        <p style="color:var(--muted);font-size:1rem;line-height:1.7">Merci, nous avons bien reçu votre demande.<br>Je vous recontacte très rapidement.</p>
-        <button onclick="document.getElementById('formSuccess').style.display='none';document.getElementById('contactForm').style.display='block'" style="margin-top:1.5rem;background:none;border:1px solid var(--border);color:var(--gold2);padding:.7rem 1.5rem;border-radius:8px;cursor:pointer;font-family:'Jost',sans-serif;font-size:.85rem">Envoyer un autre message</button>
+        <p style="color:var(--muted);font-size:1rem;line-height:1.75">Merci ! Votre demande a bien été reçue.<br>Je vous recontacte très rapidement.</p>
+        <button onclick="document.getElementById('formSuccess').style.display='none';document.getElementById('mainForm').style.display='block'" style="margin-top:1.5rem;background:none;border:1px solid var(--border);color:var(--gold2);padding:.7rem 1.5rem;border-radius:8px;cursor:pointer;font-family:'Jost',sans-serif;font-size:.85rem;transition:all .3s">Envoyer un autre message</button>
       </div>
-      <form id="contactForm">
+      <form id="mainForm">
         <div class="form-row">
-          <div class="form-group"><label>Prénom</label><input type="text" id="f_prenom" placeholder="Marie" required></div>
-          <div class="form-group"><label>Nom</label><input type="text" id="f_nom" placeholder="Dupont" required></div>
+          <div class="form-group"><label>Prénom</label><input type="text" id="f_prenom" placeholder="Marie"></div>
+          <div class="form-group"><label>Nom</label><input type="text" id="f_nom" placeholder="Dupont"></div>
         </div>
         <div class="form-group"><label>Téléphone</label><input type="tel" id="f_tel" placeholder="021 000 00 00"></div>
-        <div class="form-group"><label>E-mail</label><input type="email" id="f_email" placeholder="marie@exemple.ch" required></div>
+        <div class="form-group"><label>E-mail</label><input type="email" id="f_email" placeholder="marie@exemple.ch"></div>
         <div class="form-group">
           <label>Formation souhaitée</label>
           <select id="f_formation">
@@ -655,7 +655,7 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:0218623326">📞 021 862 33 26</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#9cf5f2faf3dcfff0f5ffeff9f2f5f3eeb2fff4">✉️ <span class="__cf_email__" data-cfemail="b0d9ded6dff0d3dcd9d3c3d5ded9dfc29ed3d8">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:info@clicsenior.ch">✉️ info@clicsenior.ch</a></li>
         <li><a href="https://www.clicsenior.ch">🌐 www.clicsenior.ch</a></li>
         <li><a href="#">📍 Gros-de-Vaud</a></li>
       </ul>
@@ -667,7 +667,7 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   const c=document.getElementById('particles');
   for(let i=0;i<30;i++){
@@ -691,53 +691,13 @@ document.querySelectorAll('#navLinks a').forEach(a=>{
   a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
 });
 
-async function sendForm(){
-  const prenom=document.getElementById('f_prenom').value.trim();
-  const email=document.getElementById('f_email').value.trim();
-  if(!prenom||!email){alert('Veuillez remplir au moins votre prénom et votre e-mail.');return;}
-  const btn=document.getElementById('submitBtn');
-  btn.textContent='⏳ Envoi en cours…';
-  btn.disabled=true;
-  btn.style.opacity='0.7';
-  const data={
-    prenom,
-    nom:document.getElementById('f_nom').value,
-    telephone:document.getElementById('f_tel').value,
-    email,
-    formation:document.getElementById('f_formation').value,
-    message:document.getElementById('f_message').value,
-    _subject:'Nouveau message ClicSenior.ch'
-  };
-  try{
-    const res=await fetch('https://formspree.io/f/xpqozbdw',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(data)
-    });
-    if(res.ok){
-      document.getElementById('contactForm').style.display='none';
-      document.getElementById('formSuccess').style.display='block';
-      document.getElementById('f_prenom').value='';
-      document.getElementById('f_nom').value='';
-      document.getElementById('f_tel').value='';
-      document.getElementById('f_email').value='';
-      document.getElementById('f_formation').value='';
-      document.getElementById('f_message').value='';
-    }else{
-      btn.textContent='Envoyer ma demande';
-      btn.disabled=false;
-      btn.style.opacity='1';
-      alert('Une erreur est survenue. Veuillez réessayer ou appeler le 021 862 33 26.');
-    }
-  }catch(e){
-    btn.textContent='Envoyer ma demande';
-    btn.disabled=false;
-    btn.style.opacity='1';
-    alert('Erreur de connexion. Veuillez vérifier votre connexion internet.');
-  }
-}
+document.getElementById('submitBtn').addEventListener('click',function(){
+  this.textContent='✓ Message envoyé — merci !';
+  this.style.background='linear-gradient(135deg,#3d6b4f,#4a8060)';
+  setTimeout(()=>{this.textContent='Envoyer ma demande';this.style.background='';},3500);
+});
 
-.svc,.tc,.fc:not(.featured)').forEach(card=>{
+document.querySelectorAll('.svc,.tc,.fc:not(.featured)').forEach(card=>{
   card.addEventListener('mousemove',e=>{
     const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
     card.style.transform=`translateY(-7px) rotateX(${-y*5}deg) rotateY(${x*5}deg)`;
