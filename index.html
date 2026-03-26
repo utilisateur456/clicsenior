@@ -603,19 +603,21 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
       <div id="formSuccess" style="display:none;text-align:center;padding:2.5rem 1rem">
         <div style="font-size:3rem;margin-bottom:1rem">✅</div>
         <h4 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);margin-bottom:.8rem">Message envoyé !</h4>
-        <p style="color:var(--muted);font-size:1rem;line-height:1.75">Merci ! Votre demande a bien été reçue.<br>Je vous recontacte très rapidement.</p>
-        <button onclick="document.getElementById('formSuccess').style.display='none';document.getElementById('mainForm').style.display='block'" style="margin-top:1.5rem;background:none;border:1px solid var(--border);color:var(--gold2);padding:.7rem 1.5rem;border-radius:8px;cursor:pointer;font-family:'Jost',sans-serif;font-size:.85rem;transition:all .3s">Envoyer un autre message</button>
+        <p style="color:var(--muted);font-size:1.05rem;line-height:1.8">Merci ! Votre demande a bien été reçue.<br>Je vous recontacte très rapidement.</p>
       </div>
-      <form id="mainForm">
+      <form id="mainForm" action="https://formspree.io/f/xpqozbdw" method="POST">
+        <input type="hidden" name="_subject" value="Nouveau message ClicSenior.ch">
+        <input type="hidden" name="_language" value="fr">
+        <input type="hidden" name="_next" value="https://utilisateur456.github.io/clicsenior/#contact?sent=1">
         <div class="form-row">
-          <div class="form-group"><label>Prénom</label><input type="text" id="f_prenom" placeholder="Marie"></div>
-          <div class="form-group"><label>Nom</label><input type="text" id="f_nom" placeholder="Dupont"></div>
+          <div class="form-group"><label>Prénom</label><input type="text" name="prenom" placeholder="Marie" required></div>
+          <div class="form-group"><label>Nom</label><input type="text" name="nom" placeholder="Dupont" required></div>
         </div>
-        <div class="form-group"><label>Téléphone</label><input type="tel" id="f_tel" placeholder="021 000 00 00"></div>
-        <div class="form-group"><label>E-mail</label><input type="email" id="f_email" placeholder="marie@exemple.ch"></div>
+        <div class="form-group"><label>Téléphone</label><input type="tel" name="telephone" placeholder="021 000 00 00"></div>
+        <div class="form-group"><label>E-mail</label><input type="email" name="email" placeholder="marie@exemple.ch" required></div>
         <div class="form-group">
           <label>Formation souhaitée</label>
-          <select id="f_formation">
+          <select name="formation">
             <option value="">Choisissez une formule…</option>
             <option>Le Déclic – Cours Découverte (CHF 89.–)</option>
             <option>L'Essentiel – Forfait Sérénité (CHF 379.–)</option>
@@ -627,8 +629,8 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
             <option>Je ne sais pas encore</option>
           </select>
         </div>
-        <div class="form-group"><label>Message (optionnel)</label><textarea id="f_message" placeholder="Décrivez votre besoin ou posez une question…"></textarea></div>
-        <button type="button" class="fsub" id="submitBtn" onclick="sendForm()">Envoyer ma demande</button>
+        <div class="form-group"><label>Message (optionnel)</label><textarea name="message" placeholder="Décrivez votre besoin ou posez une question…"></textarea></div>
+        <button type="submit" class="fsub" id="submitBtn">Envoyer ma demande</button>
       </form>
     </div>
   </div>
