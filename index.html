@@ -600,7 +600,7 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
     <div class="cform reveal d2">
       <h3>Première séance offerte</h3>
       <p>Remplissez ce formulaire, je vous recontacte rapidement.</p>
-      <form id="mainForm" action="https://formspree.io/f/xpqozbdw" method="POST">
+      <form action="https://formspree.io/f/xpqozbdw" method="POST">
         <input type="hidden" name="_subject" value="Nouveau message ClicSenior.ch">
         <input type="hidden" name="_language" value="fr">
         <div class="form-row">
@@ -624,7 +624,7 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
           </select>
         </div>
         <div class="form-group"><label>Message (optionnel)</label><textarea name="message" placeholder="Décrivez votre besoin ou posez une question…"></textarea></div>
-        <button type="submit" class="fsub" id="submitBtn">Envoyer ma demande</button>
+        <button type="submit" class="fsub">Envoyer ma demande</button>
       </form>
     </div>
   </div>
@@ -687,11 +687,7 @@ document.querySelectorAll('#navLinks a').forEach(a=>{
   a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
 });
 
-document.getElementById('submitBtn').addEventListener('click',function(){
-  this.textContent='✓ Message envoyé — merci !';
-  this.style.background='linear-gradient(135deg,#3d6b4f,#4a8060)';
-  setTimeout(()=>{this.textContent='Envoyer ma demande';this.style.background='';},3500);
-});
+
 
 document.querySelectorAll('.svc,.tc,.fc:not(.featured)').forEach(card=>{
   card.addEventListener('mousemove',e=>{
