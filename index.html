@@ -318,6 +318,32 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
   h1{font-size:3rem}
   .section-title{font-size:2.5rem}
 }
+
+/* ===== BLOG ===== */
+#blog{background:var(--bg2)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.blog-card{background:var(--surface);border-radius:20px;border:1px solid var(--border2);overflow:hidden;transition:all .4s var(--tr);cursor:pointer;text-decoration:none;display:block}
+.blog-card:hover{transform:translateY(-6px);border-color:var(--gold2);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.blog-card-cat{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:.7rem}
+.blog-card-body{padding:1.8rem}
+.blog-card-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:var(--white);margin-bottom:.7rem;line-height:1.35}
+.blog-card-excerpt{color:var(--muted);font-size:.92rem;line-height:1.7;margin-bottom:1.2rem}
+.blog-card-meta{font-size:.8rem;color:var(--muted);opacity:.7}
+.blog-card-icon{font-size:2.8rem;padding:1.5rem 1.8rem .5rem}
+.blog-read{color:var(--gold2);font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+/* Article page */
+.article-wrap{max-width:780px;margin:0 auto;padding:7rem 2rem 5rem}
+.article-wrap h1{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--white);margin-bottom:1rem;line-height:1.2}
+.article-wrap .article-meta{color:var(--muted);font-size:.9rem;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.article-wrap h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--white);margin:2.5rem 0 1rem}
+.article-wrap p{color:var(--text);line-height:1.9;margin-bottom:1.3rem;font-size:1rem}
+.article-wrap ul{color:var(--text);line-height:2;padding-left:1.5rem;margin-bottom:1.5rem}
+.article-wrap ul li{margin-bottom:.4rem}
+.article-wrap .tip{background:var(--surface);border-left:3px solid var(--gold2);padding:1.2rem 1.5rem;border-radius:0 12px 12px 0;margin:1.5rem 0;font-size:.95rem;color:var(--muted)}
+.back-btn{display:inline-flex;align-items:center;gap:.5rem;color:var(--gold2);font-size:.9rem;font-weight:500;text-decoration:none;margin-bottom:2rem;transition:gap .3s}
+.back-btn:hover{gap:.8rem}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -329,6 +355,7 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
     <li><a href="#formations">Formations</a></li>
     <li><a href="#permanence">Permanence 24/7</a></li>
     <li><a href="#temoignages">Avis</a></li>
+        <li><a href="#blog">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="tel:0218623326" class="nav-phone">021 862 33 26</a></li>
   </ul>
@@ -627,6 +654,70 @@ footer{background:#141519;color:rgba(237,229,212,.4);padding:5rem 5% 3rem;border
         <div class="form-group"><label>Message (optionnel)</label><textarea name="message" placeholder="Décrivez votre besoin ou posez une question…"></textarea></div>
         <button type="submit" class="fsub">Envoyer ma demande</button>
       </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="sl">Conseils & Guides</div>
+      <h2 class="section-title">Apprenez à votre<br><em>rythme.</em></h2>
+      <p class="section-intro">Des guides simples et pratiques pour maîtriser votre smartphone, tablette ou ordinateur — expliqués pas à pas, sans jargon.</p>
+    </div>
+    <div class="blog-grid">
+      <a href="blog-whatsapp.html" class="blog-card reveal d1">
+        <div class="blog-card-icon">💬</div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">📱 Smartphone</span>
+          <h3 class="blog-card-title">WhatsApp pas à pas : envoyer un message, une photo, un vocal</h3>
+          <p class="blog-card-excerpt">Découvrez comment utiliser WhatsApp simplement pour rester en contact avec vos proches — textes, photos et messages vocaux expliqués.</p>
+          <div class="blog-card-meta">5 min de lecture · Mars 2026</div>
+          <div class="blog-read" style="margin-top:.8rem">Lire l'article →</div>
+        </div>
+      </a>
+      <a href="blog-securite.html" class="blog-card reveal d2">
+        <div class="blog-card-icon">🔒</div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">🛡️ Sécurité</span>
+          <h3 class="blog-card-title">Comment sécuriser son smartphone en 5 étapes simples</h3>
+          <p class="blog-card-excerpt">Protégez vos données personnelles et évitez les arnaques en ligne grâce à ces 5 réflexes essentiels à adopter dès aujourd'hui.</p>
+          <div class="blog-card-meta">4 min de lecture · Mars 2026</div>
+          <div class="blog-read" style="margin-top:.8rem">Lire l'article →</div>
+        </div>
+      </a>
+      <a href="blog-videocall.html" class="blog-card reveal d3">
+        <div class="blog-card-icon">📹</div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">📱 Smartphone</span>
+          <h3 class="blog-card-title">Faire un appel vidéo avec ses proches : FaceTime, WhatsApp ou Zoom ?</h3>
+          <p class="blog-card-excerpt">Voir le visage de ses enfants ou petits-enfants en un clic — on vous explique quelle application choisir et comment démarrer votre premier appel vidéo.</p>
+          <div class="blog-card-meta">5 min de lecture · Mars 2026</div>
+          <div class="blog-read" style="margin-top:.8rem">Lire l'article →</div>
+        </div>
+      </a>
+      <a href="blog-chatgpt.html" class="blog-card reveal d1">
+        <div class="blog-card-icon">🤖</div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">💡 Intelligence artificielle</span>
+          <h3 class="blog-card-title">ChatGPT au quotidien : ce que cet assistant peut faire pour vous</h3>
+          <p class="blog-card-excerpt">Rédiger une lettre, trouver une recette, comprendre une facture… ChatGPT peut vous aider dans plein de situations du quotidien. Mode d'emploi.</p>
+          <div class="blog-card-meta">6 min de lecture · Mars 2026</div>
+          <div class="blog-read" style="margin-top:.8rem">Lire l'article →</div>
+        </div>
+      </a>
+      <a href="blog-menage.html" class="blog-card reveal d2">
+        <div class="blog-card-icon">🧹</div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">📱 Smartphone</span>
+          <h3 class="blog-card-title">Faire le ménage dans son smartphone : libérer de la place facilement</h3>
+          <p class="blog-card-excerpt">Votre téléphone est lent ou plein ? Suivez notre guide pour supprimer les photos en double, vider les caches et retrouver de l'espace en quelques minutes.</p>
+          <div class="blog-card-meta">5 min de lecture · Mars 2026</div>
+          <div class="blog-read" style="margin-top:.8rem">Lire l'article →</div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
